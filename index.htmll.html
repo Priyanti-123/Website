@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Upload File</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="upload-container">
+        <h2>Upload Data Anda</h2>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <div class="file-input">
+                <label for="file">Pilih File untuk Diunggah:</label>
+                <input type="file" name="fileToUpload" id="file" required>
+            </div>
+            <div class="submit-btn">
+                <button type="submit" name="submit">Unggah File</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
